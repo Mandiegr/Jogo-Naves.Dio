@@ -1,2 +1,3 @@
 # Jogo-Naves.Dio
-Jogo Naves 
+Jogo naves desenvolvido durante bootcamp da Digital innovation.
+tecnologias usada: JavaScript, Jquery, HTMl e CSS.

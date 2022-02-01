@@ -21,9 +21,9 @@ function start() { // Inicio da fun��o start()
   var velocidade = 5;
   var posicaoY = parseInt(Math.random() * 334);
   var TECLA = {
-    W: 87,
-    S: 83,
-    D: 68
+    uparrow: 38,
+    downarrow: 40,
+    A: 65
   }
 
   jogo.pressionou = [];
@@ -67,7 +67,7 @@ function start() { // Inicio da fun��o start()
     energia();
 
 
-  } // Fim da fun��o loop()
+  } // Fim da funcao loop()
 
   function movefundo() {
 
@@ -77,8 +77,8 @@ function start() { // Inicio da fun��o start()
   } // fim da fun��o movefundo()
   function movejogador() {
     var topo = parseInt($("#jogador").css("top"));
-    if (jogo.pressionou[TECLA.W]) {
-    
+    if (jogo.pressionou[TECLA.uparrow]) {
+
       $("#jogador").css("top", topo - 10);
 
       if (topo <= 0) {
@@ -86,7 +86,7 @@ function start() { // Inicio da fun��o start()
       }
     }
 
-    if (jogo.pressionou[TECLA.S]) {
+    if (jogo.pressionou[TECLA.downarrow]) {
 
       $("#jogador").css("top", topo + 10);
 
@@ -95,7 +95,7 @@ function start() { // Inicio da fun��o start()
       }
     }
 
-    if (jogo.pressionou[TECLA.D]) {
+    if (jogo.pressionou[TECLA.A]) {
 
       //Chama fun��o Disparo
       disparo();
@@ -109,18 +109,18 @@ function start() { // Inicio da fun��o start()
     function moveUp() {
 
       if (topo <= 0) {
-        $("#jogador").css("top", topo + 10);
+        $("#jogador").css("top", topo + 70);
       } else {
-        $("#jogador").css("top", topo - 10);
+        $("#jogador").css("top", topo - 70);
       }
 
     }
 
     function moveDown() {
       if (topo >= 434) {
-        $("#jogador").css("top", topo - 10);
+        $("#jogador").css("top", topo - 70);
       } else {
-        $("#jogador").css("top", topo + 10);
+        $("#jogador").css("top", topo + 70);
       }
 
     }
@@ -131,15 +131,15 @@ function start() { // Inicio da fun��o start()
     }
   }
 
-  $("#arrow-up").click(function() {
+  $("#arrow-up").click(function () {
     movePlayer().moveUp()
   });
 
-  $("#arrow-down").click(function() {
+  $("#arrow-down").click(function () {
     movePlayer().moveDown()
   });
 
-  $("#fire-bottom").click(function() {
+  $("#fire-bottom").click(function () {
     disparo()
   });
 
